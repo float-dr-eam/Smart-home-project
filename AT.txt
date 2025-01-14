@@ -10,6 +10,7 @@ AT+CIPSNTPTIME?
 AT+CIPSTART="TCP","api.seniverse.com",80
 AT+CIPMODE=1
 AT+CIPSEND
+//可自行注册知心天气申请免费API，更改location的拼音可更改地址
 GET https://api.seniverse.com/v3/weather/now.json?key=S3SieXzcBJfTtnfaM&location=shenzhen&language=zh-Hans&unit=c
 +++
 AT+CIPMODE=0
