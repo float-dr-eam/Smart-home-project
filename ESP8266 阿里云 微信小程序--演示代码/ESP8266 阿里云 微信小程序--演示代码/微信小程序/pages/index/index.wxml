@@ -1,0 +1,7 @@
+<view class="button-sp-are">
+  <button class="weui-btn" type="primary" size="mini"  bindtap="onClickOpen">开灯</button>
+  <button type="warn" size="mini"  bindtap="onClickOff">关灯</button>
+  <button size="mini">温度：{{temperature}}℃</button>
+  <button size="mini">湿度：{{humidity}}</button>
+  <button size="mini">光照：{{lightSwitch}}</button>
+</view>

@@ -34,7 +34,6 @@ void Key_Init(void)
 	EXTI_I.EXTI_Trigger = EXTI_Trigger_Falling;        //设置为下降沿触发
 	EXTI_I.EXTI_LineCmd = ENABLE;                      //使能
 	EXTI_Init(&EXTI_I);                                //初始化
-
 }
 /*
 void EXTI15_10_IRQHandler(void)
