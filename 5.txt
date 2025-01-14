@@ -1,0 +1,97 @@
+//static char User[]="AT+MQTTUSERCFG=0\\,1\\,\\\"NULL\\\"\\,\\\"ESP_01S&k1st6SO97yW\\\"\\,\\\"fa14fbe5481d125d7d152ebbf34e4e95a94de86669e182bbb380eef7859f3d10\\\"\\,0\\,0\\,\\\"\\\"";
+
+
+
+
+/*
+void displayNTPTime(char* timeStr) 
+{
+    char day[4], month[4];
+    int date, hour, minute, second, year;
+    int monthNumber;
+    const char* prefix = "+CIPSNTPTIME:";
+    // 查找前缀的位置
+    char* pos = strstr(timeStr, prefix);
+    if (pos != NULL) {
+        // 移动指针到前缀结束的位置
+        pos += strlen(prefix);
+        // 将剩余的内容复制到响应字符串的开头
+        strcpy(timeStr, pos);
+    }
+    // 解析NTP时间字符串
+    sscanf(timeStr, "%s %s %d %d:%d:%d %d", day, month, &date, &hour, &minute, &second, &year);
+    // 将月份缩写转换为数字
+    if (strcmp(month, "Jan") == 0) monthNumber = 1;
+    else if (strcmp(month, "Feb") == 0) monthNumber = 2;
+    else if (strcmp(month, "Mar") == 0) monthNumber = 3;
+    else if (strcmp(month, "Apr") == 0) monthNumber = 4;
+    else if (strcmp(month, "May") == 0) monthNumber = 5;
+    else if (strcmp(month, "Jun") == 0) monthNumber = 6;
+    else if (strcmp(month, "Jul") == 0) monthNumber = 7;
+    else if (strcmp(month, "Aug") == 0) monthNumber = 8;
+    else if (strcmp(month, "Sep") == 0) monthNumber = 9;
+    else if (strcmp(month, "Oct") == 0) monthNumber = 10;
+    else if (strcmp(month, "Nov") == 0) monthNumber = 11;
+    else if (strcmp(month, "Dec") == 0) monthNumber = 12;
+    else monthNumber = 0; // 无效的月份
+    // 格式化输出
+    unsigned char formattedTime[20];
+    unsigned char formattedDate[20];
+    // 生成格式化的时间字符串，如 "17:09:22"
+    sprintf((char*)formattedTime, "%02d:%02d:%02d", hour, minute, second);
+    // 生成格式化的日期字符串，如 "  2023 11 17"
+    sprintf((char*)formattedDate, "%d/%02d/%02d", year, monthNumber,date );
+    // 显示结果
+	printf("日期: %s\n", formattedDate);
+    printf("时间: %s\n", formattedTime);
+	LCD_ShowString(70,52,formattedDate,RED,LIGHTBLUE,24,0);
+	LCD_ShowString(118,86,formattedTime,RED,LIGHTBLUE,24,0);
+	memset(timeStr,0, RX_BUF_MAX_LEN);
+}*/
+
+
+// @brief  ESP8266 Sta Tcp Client 开启透传模式
+/*void ESP8266_NTP ( void )
+{
+
+	// 发送查询 NTP 时间的命令
+	ESP8266_Cmd("AT+CIPSNTPTIME?", "OK", NULL, 200);
+    displayNTPTime(strEsp8266_Fram_Record .Data_RX_BUF);
+}*/
+
+
+/*void extract_data(char *json) 
+{    
+	char empty_string1[6]="      "; 
+    char empty_string2[6]="      ";
+    char location[50];
+    char weather[30];
+    char temperature[15];
+    u8 len =0;
+    // 提取地点
+    sscanf(strstr(json, "\"name\":\"") + 8, "%[^\"]", location);
+    
+    // 提取天气
+    sscanf(strstr(json, "\"text\":\"") + 8, "%[^\"]", weather);
+
+    // 提取温度
+    sscanf(strstr(json, "\"temperature\":\"") + 15, "%[^\"]", temperature);
+    
+    // 打印结果
+    printf("地点: %s\n", location);
+    printf("天气: %s\n", weather);
+    printf("温度: %s°C\n", temperature);
+	
+	len = sizeof(location);// 填充空字符串
+
+	LCD_ShowChinese24x24(70,120,(u8	*)location,RED,LIGHTBLUE,24,0);//地点
+    LCD_ShowString(70+(len/3)*24,120,(u8 *)empty_string1,RED,LIGHTBLUE,24,0);
+	
+    len = sizeof(weather);// 填充空字符串
+
+	LCD_ShowChinese24x24(70,154,(u8 *)weather,RED,LIGHTBLUE,24,0);//天气
+	LCD_ShowString(70+(len/3)*24,154,(u8 *)empty_string2,RED,LIGHTBLUE,24,0);
+
+	LCD_ShowString(70,188,(u8 *)temperature,RED,LIGHTBLUE,24,0);
+	memset(json, 0, RX_BUF_MAX_LEN);
+}*/

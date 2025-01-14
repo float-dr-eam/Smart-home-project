@@ -1,0 +1,28 @@
+<!-- 水平摆放的代码<view class="map_container">
+ <view class="img_container" style="flex-direction: row;">
+   <image class="img" src="../images/temp.png"></image>
+   <image class="img" src="../images/light.png"></image>
+   <image class="img" src="../images/humi.png"></image>
+ </view>
+ <text>温度{{ temperature}}℃</text>
+ <text>湿度{{Humidity}}</text> 
+ <text>烟雾数值{{SmokeSensorValue}}</text>
+ <text>租借篮球数量{{ basketball}}</text>
+</view> 
+<view class="map_container">
+<view class="img_container" style="flex-direction: column; align-items: center;">
+ <image class="img" src="../images/temp.png"></image>
+ <image class="img" src="../images/light.png"></image>
+ <image class="img" src="../images/humi.png"></image>
+</view>
+<text>温度{{ temperature}}℃</text>
+<text>湿度{{Humidity}}</text> 
+</view>
+<text>烟雾数值{{SmokeSensorValue}}</text>
+<text>租借篮球数量{{ basketball}}</text>
+<view class="container">-->
+  <button class="weui-bth" type="primary" size="mini" bind:tap="onClickOpen">开灯</button>
+  <button type="warn" size="mini" bind:tap="onClickOff">关灯</button>
+  <button size="mini">温度：{{LightSwitch}}℃</button>
+  <view class="text">温度：{{LightSwitch}}℃</view>
+<!--</view>

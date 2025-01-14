@@ -1,0 +1,5 @@
+{
+  "ProductKey": "k1st6SO97yW",
+  "DeviceName": "WECHAT",
+  "DeviceSecret": "05b51b7a46cb6b6c2b29ece188638ae6"
+}

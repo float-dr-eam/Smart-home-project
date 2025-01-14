@@ -1,0 +1,13 @@
+{
+  "pages":[
+    "pages/index/index"
+    ],
+    "window":{
+      "backgroundTextStyle": "light",
+      "navigationBarBackgroundColor": "#fff",
+      "navigationBarTitleText": "智能家居管理系统",
+      "navigationBarTextStyle": "black"
+    },
+  
+  "sitemapLocation": "sitemap.json"
+}

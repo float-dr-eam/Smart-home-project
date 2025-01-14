@@ -1,0 +1,13 @@
+{
+  "pages":[
+    "pages/index/index"
+    ],
+    "window":{
+      "backgroundTextStyle": "light",
+      "navigationBarBackgroundColor": "#fff",
+      "navigationBarTitleText": "智能高校体育器材管理",
+      "navigationBarTextStyle": "black"
+    },
+  
+  "sitemapLocation": "sitemap.json"
+}
