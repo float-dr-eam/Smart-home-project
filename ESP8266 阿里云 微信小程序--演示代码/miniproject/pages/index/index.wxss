@@ -1,0 +1,179 @@
+.head {
+  display: flex;
+  padding-top: 120rpx;
+}
+
+.head>image {
+  width: 100rpx;
+  height: 100rpx;
+  margin-left: 20rpx;
+}
+
+.head>view {
+  margin-left: 10rpx;
+  font-size: 40rpx;
+  font-weight: 600;
+  line-height: 100rpx;
+}
+
+.flex {
+  display: flex;
+}
+
+.weather {
+  box-shadow: 0 10rpx 20rpx 0 rgba(0, 0, 0, 0.3);
+  height: 250rpx;
+  width: 700rpx;
+  border-radius: 35rpx;
+  background-color: #ffffff;
+  display: flex;
+  margin-left: 30rpx;
+  margin-top: 20rpx;
+}
+
+.weather_image_view {
+  display: flex;
+  width: 40%;
+  align-items: center;
+}
+
+.weather_image {
+  width: 200rpx;
+  margin-left: 50rpx;
+}
+
+.weather_info_view {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.location_view {
+  margin-top: 40rpx;
+}
+
+.location_image {
+  width: 20rpx;
+}
+
+.location_info {
+  font-size: 24rpx;
+  margin-left: 10rpx;
+}
+
+.temp_info {
+  font-size: 70rpx;
+  margin-top: 10rpx;
+}
+
+.wind_info {
+  font-size: 24rpx;
+  margin-top: 10rpx;
+}
+
+.display_system {
+  display: flex;
+  flex-wrap: wrap; /* 允许换行 */
+  width: 92%; /* 确保父容器宽度足够大 */
+  margin-top: 30rpx;
+  margin-left: 30rpx;
+  gap: 20rpx; /* 在每个 bow 之间添加适当的间距 */
+}
+
+.bow1, .bow2, .bow3, .bow4, .bow5, .bow6 {
+  display: flex;
+  width: calc(50% - 10rpx); /* 每个 bow 占 50% 的宽度，减去间距的一半 */
+  height: 205rpx;
+  box-shadow: 0 8rpx 20rpx 0 rgba(0, 0, 0, 0.3);
+  background-color: #ffffff;
+  border-radius: 32rpx;
+  box-sizing: border-box; /* 确保宽度包括 padding 和 border */
+}
+
+.bow1_image_container {
+  display: flex;
+  margin-top: 0rpx;
+  margin-left: 0rpx;
+}
+
+.bow1_image {
+  width: 100rpx; /* 固定宽度 */
+  height: auto; /* 高度根据宽高比自动调整 */
+  margin-top: 45rpx; /* 调整图片的顶部间距 */
+  margin-left: 30rpx; /* 调整图片的左侧间距 */
+}
+.bow1_word_info{
+  margin-top: 30rpx;
+  margin-left:30rpx;
+}
+.temperature{
+  font-size: 35rpx;
+  margin-left: 10rpx;
+}
+
+.bow1_word_info_wenzi{
+  margin-top: 10rpx;
+  margin-left:45rpx;
+  font-size: 30rpx;
+}
+.bow1_word_info_range{
+  margin-top: 10rpx;
+  margin-left:40rpx;
+  font-size: 30rpx;
+}
+
+.bow3_word_container{
+  margin-top: 40rpx;
+  margin-left:20rpx;
+}
+.bow3_word_waterlevel{
+  margin-top: 15rpx;
+  margin-left:30rpx;
+  font-size: 40rpx;
+}
+
+.bow4_word_container{
+  margin-top: 40rpx;
+  margin-left:40rpx;
+}
+
+.word {
+  font-size: 40rpx; /* 文字大小 */
+  font-weight: bold; /* 加粗 */
+}
+
+.toggle-switch {
+  transform: scale(1.2); /* 放大开关 */
+  margin-top: 0rpx;
+  margin-left:0rpx;
+}
+
+.led-container {
+  position: relative;
+  margin-top: 52rpx;
+  margin-left: 40rpx;
+  width: 50px;
+  height: 50px;
+}
+
+.led {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.red {
+  background-color: #ff4444; /* 红色 */
+}
+
+.yellow {
+  background-color: #ffbb00; /* 红色 */
+}
+
+.green {
+  background-color: #44ff44; /* 绿色 */
+}

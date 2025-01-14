@@ -1,0 +1,96 @@
+<view class="container">
+  <view class="head">
+    <image src="/images/house.png"></image>
+    <view>{{title}}</view>
+  </view>
+ 
+  <view class="flex weather">
+    <view class="weather_image_view">
+      <image src="{{weatherInfo.imageUrl}}" class="weather_image" mode="widthFix"></image>
+    </view>
+    <view class="weather_info_view">
+      <view class="location_view">
+        <image src="/images/location.png" mode="widthFix" class="location_image"></image>
+        <text class="location_info">{{weatherInfo.province}} {{weatherInfo.city}}</text>
+      </view>
+      <view class="temp_info">{{weatherInfo.weather}} {{weatherInfo.temperature}}℃</view>
+      <view class="wind_info">湿度 {{weatherInfo.humidity}}% | 风力{{weatherInfo.windpower}}级</view>
+    </view>
+  </view>
+
+
+  <view class="display_system">
+    <view class="flex bow1">
+    <view class="bow1_image_container">
+      <image src="/images/sensors/temp.png" class="bow1_image" mode="widthFix"></image>
+    </view>
+    <view class="bow1_word_container">
+      <view class="bow1_word_info">
+        <view class="temperature">{{currenttemperature}}℃</view>
+      </view>
+    <view class="bow1_word_info_wenzi">温度</view>
+    <view class="bow1_word_info_range">{{bottem_tem}}~{{top_tem}}</view>
+    </view>
+  </view>
+
+    <view class="flex bow2">
+      <view class="bow1_image_container">
+      <image src="/images/sensors/humidity.png" class="bow1_image" mode="widthFix"></image>
+    </view>
+    <view class="bow1_word_container">
+      <view class="bow1_word_info">
+        <view class="temperature">{{currenthumidity}}%</view>
+      </view>
+    <view class="bow1_word_info_wenzi">湿度</view>
+    <view class="bow1_word_info_range">{{bottem_humidity}}~{{top_humidity}}</view>
+    </view>
+    </view>
+
+    <view class="flex bow3">
+      <view class="bow1_image_container">
+      <image src="/images/sensors/waterposition.png" class="bow1_image" mode="widthFix"></image>
+    </view>
+    <view class="bow3_word_container">
+      <view class="word" style="color: {{waterFlagColors[waterflag] || 'black'}};">
+        水位状态
+      </view>
+      <view class="bow3_word_waterlevel">{{currentwaterlevel}}%</view>
+    </view>
+  </view>
+
+    <view class="flex bow4">
+      <view class="bow1_image_container">
+      <image src="/images/sensors/led.png" class="bow1_image" mode="widthFix"></image>
+    </view>
+    <view class="bow4_word_container">
+      <view class="word">灯</view>
+      <switch class="toggle-switch" data-id="led" bindchange="handleSwitchChange" checked="{{isLedOn}}" />
+      </view>
+
+    </view>
+
+    <view class="flex bow5">
+      <view class="bow1_image_container">
+      <image src="/images/sensors/jiashi.png" class="bow1_image" mode="widthFix"></image>
+    </view>
+    <view class="bow4_word_container">
+      <view class="word">加湿器</view>
+      <switch class="toggle-switch" data-id="jiashi" bindchange="handleSwitchChange" checked="{{isjiashiOn}}" />
+      </view>
+
+    </view>
+    
+    <view class="flex bow6">
+      <view class="bow1_image_container">
+      <image src="/images/sensors/alert.png" class="bow1_image" mode="widthFix"></image>
+      </view>
+      <view class="led-container">
+      <view class="led red" wx:if="{{isalertOn>=2}}"></view>
+      <view class="led yellow" wx:if="{{isalertOn==1}}"></view>
+      <view class="led green" wx:if="{{isalertOn==0}}"></view>
+      </view>
+    </view>
+  </view>
+
+
+</view>
