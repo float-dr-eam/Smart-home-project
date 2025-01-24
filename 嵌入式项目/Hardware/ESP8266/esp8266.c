@@ -132,11 +132,9 @@ void extract_mqtt_flags(char *mqtt_msg,bool* jsq_switch,bool* LED_switch)
 		{
 			*LED_switch = false;
 		}
-        memset(mqtt_msg, 0, RX_BUF_MAX_LEN);
+        memset(mqtt_msg, 0, RX_BUF_MAX_LEN);// 清除原始json缓冲区
 		strEsp8266_Fram_Record .InfBit .FramLength = 0; //初始化帧长度为0
-	}
-	// 清除原始json缓冲区
-    
+	}  
 }
 
 void ESP8266_weather ( void )

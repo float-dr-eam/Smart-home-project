@@ -153,6 +153,13 @@ int main(void)
 			LCD_ShowString(70+get_number_length_sprintf(waterlevel)*12,208,(u8*)"% ",RED,LIGHTBLUE,24,0);//94
 			warning_leavel = warning_leavel+water_leavel_Check(waterlevel);
 		}
+		if(update_flag ==0)
+		{
+			update_flag=1;			
+			create_mqtt_all_command(temperature,humidity,waterlevel,warning_leavel,data, sizeof(data)); // 调用函数创建命令字符串
+			ESP8266_Aliyun(data);
+		}
+
 	}
 
 }
@@ -365,18 +372,15 @@ void TIM1_UP_IRQHandler(void)
         // 清除定时器的更新中断标志
         TIM_ClearITPendingBit(TIM1, TIM_IT_Update);
         ++update_flag;
-        if (update_flag >= 15) // 假设每秒中断一次，这里表示 10 秒定时器
+        if (update_flag >= 16) // 假设每秒中断一次，这里表示 15 秒定时器
         {
             update_flag = 0;
-            // 调用函数创建命令字符串
-			create_mqtt_all_command(temperature,humidity,waterlevel,warning_leavel,data, sizeof(data));
-			ESP8266_Aliyun(data);
         }
-		if(!(update_flag % 5))//5s定时器
+		if(!(update_flag % 6))//5s定时器
 		{
 			reflag = !reflag;
 		}
-        if(!(update_flag%2))//2s定时器0.25*8
+        if(!(update_flag%3))//2s定时器
 		{
 			warning_reflag= !warning_reflag;//报警
 			if(warning_reflag)
@@ -453,14 +457,14 @@ void EXTI15_10_IRQHandler(void)
 		Delay_ms(20);											//延时消抖
 		while (GPIO_ReadInputDataBit(GPIOB, GPIO_Pin_14) == 0);	//等待按键松手
 		Delay_ms(20);											//延时消抖
-		KeyNum = 3;												//置键码为2
+		KeyNum = 3;												//置键码为3
 	}
 	if (GPIO_ReadInputDataBit(GPIOB, GPIO_Pin_15) == 0)			//读PB15输入寄存器的状态，如果为0，则代表按键4按下
 	{
 		Delay_ms(20);											//延时消抖
 		while (GPIO_ReadInputDataBit(GPIOB, GPIO_Pin_15) == 0);	//等待按键松手
 		Delay_ms(20);											//延时消抖
-		KeyNum = 4;												//置键码为2
+		KeyNum = 4;												//置键码为4
 	}
 	EXTI_ClearITPendingBit(EXTI_Line12|EXTI_Line13|EXTI_Line14|EXTI_Line15);
 }
